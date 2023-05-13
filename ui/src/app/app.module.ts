@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 const materialModules = [
   MatButtonModule,
@@ -23,7 +24,8 @@ const materialModules = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
