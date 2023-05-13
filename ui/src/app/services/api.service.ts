@@ -10,8 +10,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getRanking() : Observable<any> {
-    return this.http.get<any>(`${environment.apiUrl}/ranking`);
+  getRanking() : Observable<any[]> {
+    return this.http.get<any[]>(`${environment.apiUrl}/ranking`);
   }
 
   createUser(id: string) : Observable<any> {

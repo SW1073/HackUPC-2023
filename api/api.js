@@ -10,8 +10,6 @@ const pool = new Pool({
     port: 5432,
 });
 
-router.use(express.json())
-
 // POST user to DB
 router.post("/save-user", (req, res) => {
     const username = req.body.username;
@@ -34,8 +32,6 @@ router.post("/save-user", (req, res) => {
     });
 });
 
-
-
 router.get("/user/:username", (req, res) => {
     const username = req.params.username;
 
@@ -53,22 +49,6 @@ router.get("/user/:username", (req, res) => {
         }
         else res.json(query_res.rows)
     });
-})
-
-// GET ranking fron DB
-router.get("/ranking", (req, res) => {
-    //const query = "SELECT username,SUM(game.points) FROM IndividualGame game JOIN Users u ON u.username=game.player GROUP BY u.username ORDER BY SUM(game.points) DESC"
-    const query = "SELECT * FROM IndividualGame ORDER BY points DESC";
-
-    // TODO fix this
-     pool.query(query, (err, query_res) => { 
-         if(err) {
-              console.log(err)
-              res.status(500).json({ error: 'Server error' });
-         }
-         else res.json = query_res.rows
-     });
-     
 })
 
 router.get("/questions", (req, res) => {
@@ -117,7 +97,19 @@ router.post("/save-individual-game", (req, res) => {
     });
 })
 
+// GET ranking fron DB
+router.get("/ranking", (req, res) => {
+    const query = 'SELECT u.username, SUM(game.points) FROM IndividualGame game INNER JOIN Users u ON u.username=game.player GROUP BY u.username ORDER BY SUM(game.points) desc';
 
-
+    pool.query(query, (err, query_res) => {
+        if(err) {
+            console.log(err)
+            res.status(500).json({ error: 'Server error' });
+        }
+        else {
+            res.send(query_res.rows);
+        }
+    });
+})
 
 module.exports = router

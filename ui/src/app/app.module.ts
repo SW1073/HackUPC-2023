@@ -19,7 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
-
+import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
 
 const materialModules = [
   MatButtonModule,
@@ -36,7 +36,11 @@ const materialModules = [
   declarations: [
     AppComponent,
     LoginPageComponent,
+<<<<<<< HEAD
     RankingPageComponent
+=======
+    IndividualTriviaComponent
+>>>>>>> jafeth
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ const materialModules = [
     HttpClientModule,
     NoopAnimationsModule,
     materialModules,
-    FormsModule
+    FormsModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'login-page',
@@ -19,7 +20,7 @@ export class LoginPageComponent {
 
   title = 'Welcome to Vueling!';
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private apiService: ApiService) {}
 
   saveUser(event: Event) {
       event.preventDefault();
@@ -42,8 +43,12 @@ export class LoginPageComponent {
 
       console.log(data);
 
-      // this.http.post('http://localhost:3000/api/save-user', data).subscribe(response => {
-      //     console.log(response);
-      // });
+        // this.apiService.getRanking().subscribe(response => { 
+        //     console.log(response);
+        // });
+
+      this.http.get('http://localhost:3000/api/ranking').subscribe(response => {
+          console.log(response);
+      });
   }
 }
