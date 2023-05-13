@@ -3,9 +3,8 @@ create table Users (
 );
 
 create table IndividualGame (
-	gameTime timestamp,
+    id serial primary key,
 	player varchar(100),
 	points integer,
-	primary key (gameTime, player),
 	foreign key (player) references Users(username)
 );

@@ -59,13 +59,15 @@ router.get("/user/:username", (req, res) => {
 
 // GET ranking fron DB
 router.get("/ranking", (req, res) => {
+    const query = "SELECT username,SUM(game.points) FROM IndividualGame game JOIN Users u ON u.username=game.player GROUP BY username ORDER BY SUM(game.points) DESC"
+
     // TODO fix this
-     pool.query('SELECT username,SUM(game.points) FROM IndividualGame game JOIN Users u ON u.username=game.player GROUP BY username ORDER BY SUM(game.points) DESC', (err, res) => { 
-     if(err) {
+     pool.query(query, (err, query_res) => { 
+         if(err) {
               console.log(err)
               res.status(500).json({ error: 'Server error' });
          }
-         else res.json = res.rows
+         else res.json = query_res.rows
      });
      
 })
@@ -90,6 +92,28 @@ router.get("/users", (req, res) => {
         }
         else {
             res.send(query_res.rows);
+        }
+    });
+})
+
+router.post("/save-individual-game", (req, res) => {
+    const username = req.body.username;
+    const points = req.body.points;
+
+    if (username == undefined) {
+        res.status(400).json({ error: 'Bad request' });
+        return;
+    }
+
+    const query = "INSERT INTO IndividualGame (player, points) VALUES ('" + username + "', " + points + ")";
+
+    pool.query(query, (err, query_res) => {
+        if(err) {
+            console.log(err);
+            res.status(500).json({ error: 'Server error' });
+        }
+        else {
+            res.json(query_res.rows);
         }
     });
 })
