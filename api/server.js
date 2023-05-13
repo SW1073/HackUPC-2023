@@ -7,6 +7,8 @@ app.get('/', (req, res) => {
 
 const apiRoute = require('./api.js');
 
+app.use('/api', apiRoute);
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
