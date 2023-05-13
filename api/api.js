@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router() 
 
+router.use(express.json())
+
 // POST user to DB
 router.post("/save-user", (req, res) => {
+    console.log(req.body);
     const response = {message: "User saved"};
     res.send(response);
 })
