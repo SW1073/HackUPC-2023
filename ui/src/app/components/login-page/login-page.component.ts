@@ -1,54 +1,40 @@
 import { Component } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
 
-  username?: string;
+    title = 'Welcome to Vueling!';
 
-  login(event: any) {
-    // Add your login logic here
-    event.preventDefault();
-    console.log(event);
-  }
+    constructor(private http: HttpClient, private apiService: ApiService,
+                private router: Router) {}
 
+    ngOnInit() {
+        if (localStorage.getItem('username') !== null) {
+            console.log('user is logged in');
+            this.router.navigate(['/individual-trivia']);
+        }
+    }
 
-  title = 'Welcome to Vueling!';
+    createUser(event: any) {
+        event.preventDefault();
+        let value = event.target[0].value;
+        let data = {username: value};
 
-    constructor(private http: HttpClient, private apiService: ApiService) {}
+        console.log('front-end creating user: ' + value);
 
-  saveUser(event: Event) {
-      event.preventDefault();
-      console.log('front-end saving user');
+        localStorage.setItem('username', value);
 
-      const data = {name: "John", email: "john@doe.com"};
-
-      this.http.post('http://localhost:3000/api/save-user', data).subscribe(response => {
-          console.log(response);
-      });
-  }
-
-  createUser(event: any) {
-      event.preventDefault();
-      console.log('front-end creating user');
-      // console.log(event);
-
-      let value = event.target[0].value;
-      let data = {username: value};
-
-      console.log(data);
-
-        // this.apiService.getRanking().subscribe(response => { 
-        //     console.log(response);
-        // });
-
-      this.http.get('http://localhost:3000/api/ranking').subscribe(response => {
-          console.log(response);
-      });
-  }
+        this.http.post('http://localhost:3000/api/save-user', data).subscribe(response => {
+            this.router.navigate(['/individual-trivia']);
+            console.log(response);
+        });
+    }
 }
