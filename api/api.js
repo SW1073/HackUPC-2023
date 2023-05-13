@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const { Pool } = require('pg')
 
-router.use(express.json());
-
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
@@ -59,7 +57,8 @@ router.get("/user/:username", (req, res) => {
 
 // GET ranking fron DB
 router.get("/ranking", (req, res) => {
-    const query = "SELECT username,SUM(game.points) FROM IndividualGame game JOIN Users u ON u.username=game.player GROUP BY username ORDER BY SUM(game.points) DESC"
+    //const query = "SELECT username,SUM(game.points) FROM IndividualGame game JOIN Users u ON u.username=game.player GROUP BY u.username ORDER BY SUM(game.points) DESC"
+    const query = "SELECT * FROM IndividualGame ORDER BY points DESC";
 
     // TODO fix this
      pool.query(query, (err, query_res) => { 
@@ -117,5 +116,8 @@ router.post("/save-individual-game", (req, res) => {
         }
     });
 })
+
+
+
 
 module.exports = router
