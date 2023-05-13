@@ -36,11 +36,8 @@ const materialModules = [
   declarations: [
     AppComponent,
     LoginPageComponent,
-<<<<<<< HEAD
-    RankingPageComponent
-=======
-    IndividualTriviaComponent
->>>>>>> jafeth
+    RankingPageComponent,
+    IndividualTriviaComponent,
   ],
   imports: [
     BrowserModule,
