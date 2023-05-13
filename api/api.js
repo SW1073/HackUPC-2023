@@ -4,9 +4,8 @@ const { Pool } = require('pg')
 
 // POST user to DB
 router.post("/save-user", (req, res) => {
-    const user = req.body
-    consol.log(user)
-    res.send("User saved")
+    const response = {message: "User saved"};
+    res.send(response);
 })
 
 // GET user score form DB
