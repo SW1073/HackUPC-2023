@@ -20,6 +20,10 @@ import { MatInputModule } from '@angular/material/input';
 import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
 
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const materialModules = [
@@ -31,6 +35,9 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatGridListModule,
+    MatRadioModule,
+    MatIconModule,
+    MatSnackBarModule,
 ];
 
 @NgModule({
@@ -46,7 +53,7 @@ const materialModules = [
     NoopAnimationsModule,
     materialModules,
     FormsModule,
-    MatGridListModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

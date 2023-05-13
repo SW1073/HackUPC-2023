@@ -3,12 +3,27 @@
 <div class="container" style="border: 10px solid black;">
     <mat-grid-list cols="6" >
         <mat-grid-tile>
+            <h2>{{question}}</h2>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="6" >
+        <mat-grid-tile>
             <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         </mat-grid-tile>
     </mat-grid-list>
-    <mat-grid-list cols="6" >
 
-    </mat-grid-list>
+    <div>
+        <form>
+        <mat-radio-group formControlName="selectedAnswer">
+          <mat-radio-button *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </form>
+    </div>
+    
+
 
 </div>
 
