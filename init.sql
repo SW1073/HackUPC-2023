@@ -28,12 +28,36 @@ INSERT INTO Users (username) VALUES ('jafeth');
 INSERT INTO Users (username) VALUES ('eloi');
 INSERT INTO Users (username) VALUES ('marcel');
 
+INSERT INTO Users (username) VALUES ('Jugador 1');
+INSERT INTO Users (username) VALUES ('Jugador 2');
+INSERT INTO Users (username) VALUES ('Jugador 3');
+INSERT INTO Users (username) VALUES ('Jugador 28');
+INSERT INTO Users (username) VALUES ('Jugador 29');
+INSERT INTO Users (username) VALUES ('Jugador 30');
+INSERT INTO Users (username) VALUES ('Jugador 31');
+INSERT INTO Users (username) VALUES ('Jugador 32');
+INSERT INTO Users (username) VALUES ('Jugador 33');
+INSERT INTO Users (username) VALUES ('Jugador 34');
+
+
 INSERT INTO IndividualGame (player, points) VALUES ('jafeth', 10);
 INSERT INTO IndividualGame (player, points) VALUES ('jafeth', 10);
 INSERT INTO IndividualGame (player, points) VALUES ('eloi', 50);
 INSERT INTO IndividualGame (player, points) VALUES ('eloi', 50);
 INSERT INTO IndividualGame (player, points) VALUES ('marcel', 20);
 INSERT INTO IndividualGame (player, points) VALUES ('marcel', 20);
+
+INSERT INTO individualgame (player, points) VALUES ('Jugador 1', 100);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 2', 80);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 3', 60);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 28', 75);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 29', 85);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 30', 95);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 31', 70);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 32', 90);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 33', 85);
+INSERT INTO individualgame (player, points) VALUES ('Jugador 34', 75);
+
 
 INSERT INTO Cities (name, country) VALUES ('New York City', 'United States');
 INSERT INTO Cities (name, country) VALUES ('Paris', 'France');

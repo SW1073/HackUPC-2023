@@ -2,8 +2,6 @@ const express = require('express')
 const router = express.Router()
 const { Pool } = require('pg')
 
-router.use(express.json());
-
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
@@ -52,7 +50,6 @@ router.get("/user/:username", (req, res) => {
         else res.json(query_res.rows)
     });
 })
-
 
 router.get("/questions", (req, res) => {
     // TODO fix this

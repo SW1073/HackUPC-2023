@@ -1,0 +1,21 @@
+<h1>Ranking </h1>
+<div class="container">
+    <table mat-table [dataSource]="ranking" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let i = index"> {{ i+1 }} </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container>
+        <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef> Score </th>
+            <td mat-cell *matCellDef="let element"> {{element.sum}} </td>
+        </ng-container>
+        <!-- Celdas de la tabla -->
+        <mat-header-row *matHeaderRowDef="['position', 'name', 'score']"></mat-header-row>
+        <mat-row *matRowDef="let position; columns: ['position', 'name', 'score']"></mat-row>
+    </table>
+</div>
+
