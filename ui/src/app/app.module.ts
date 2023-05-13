@@ -17,6 +17,9 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
+
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 const materialModules = [
@@ -26,13 +29,15 @@ const materialModules = [
   MatNativeDateModule,
   MatSliderModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatGridListModule,
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    IndividualTriviaComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,8 @@ const materialModules = [
     HttpClientModule,
     NoopAnimationsModule,
     materialModules,
-    FormsModule
+    FormsModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
