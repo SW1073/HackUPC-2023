@@ -24,7 +24,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const materialModules = [
   MatButtonModule,
@@ -38,13 +40,15 @@ const materialModules = [
     MatRadioModule,
     MatIconModule,
     MatSnackBarModule,
+    MatToolbarModule,
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    IndividualTriviaComponent
+    IndividualTriviaComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
