@@ -115,4 +115,18 @@ router.get("/ranking", (req, res) => {
     });
 })
 
+router.get("/random-question", (req, res) => {
+    const query = 'SELECT * FROM Questions ORDER BY RANDOM() LIMIT 1';
+
+    pool.query(query, (err, query_res) => {
+        if(err) {
+            console.log(err)
+            res.status(500).json({ error: 'Server error' });
+        }
+        else {
+            res.send(query_res.rows);
+        }
+    });
+});
+
 module.exports = router

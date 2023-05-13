@@ -2,6 +2,7 @@ create table Users (
 	username varchar(100) primary key
 );
 
+
 create table IndividualGame (
     id serial primary key,
 	player varchar(100),
@@ -9,17 +10,18 @@ create table IndividualGame (
 	foreign key (player) references Users(username)
 );
 
-create tabla Cities (
+create table Cities (
     name varchar(100) primary key,
-    country varchar(100),
+    country varchar(100)
 );
 
 create table Questions (
     id serial primary key,
-    foreign key (city) references Cities(name),
+    city varchar(100),
     question varchar(100),
     answer varchar(100),
-    choices varchar(100)[] not null
+    choices varchar(100)[] not null,
+    foreign key (city) references Cities(name)
 );
 
 INSERT INTO Users (username) VALUES ('jafeth');
@@ -51,6 +53,10 @@ INSERT INTO Cities (name, country) VALUES ('Istanbul', 'Turkey');
 INSERT INTO Cities (name, country) VALUES ('Madrid', 'Spain');
 INSERT INTO Cities (name, country) VALUES ('Seoul', 'South Korea');
 INSERT INTO Cities (name, country) VALUES ('Venice', 'Italy');
+INSERT INTO Cities (name, country) VALUES ('London', 'United Kingdom');
+INSERT INTO Cities (name, country) VALUES ('Moscow', 'Russia');
+INSERT INTO Cities (name, country) VALUES ('Dubai', 'United Arab Emirates');
+INSERT INTO Cities (name, country) VALUES ('Amsterdam', 'Netherlands');
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('New York City', 'What is the tallest building in New York City?', 'One World Trade Center', '{"Empire State Building", "Chrysler Building", "One World Trade Center", "Bank of America Tower"}');
@@ -77,16 +83,13 @@ INSERT INTO Questions (city, question, answer, choices)
 VALUES ('Sydney', 'What is the name of the famous opera house in Sydney?', 'Sydney Opera House', '{"Melbourne Opera House", "Brisbane Opera House", "Adelaide Opera House", "Sydney Opera House"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('Hong Kong', 'What is the name of the famous theme park in Hong Kong?', 'Hong Kong Disneyland', '{"Hong Kong Disneyland", "Ocean Park", "Universal Studios Singapore", "Tokyo DisneySea"}');
-
-INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('Moscow', 'What is the name of the famous square in Moscow?', 'Red Square', '{"Red Square", "St. Basil''s Cathedral Square", "Pushkin Square", "Lubyanka Square"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('Dubai', 'What is the name of the world''s tallest building in Dubai?', 'Burj Khalifa', '{"Burj Khalifa", "Abraj Al Bait Clock Tower", "Shanghai Tower", "One World Trade Center"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('Amsterdam', 'What is the name of the famous museum in Amsterdam?', 'Rijksmuseum', '{"Van Gogh Museum", "Anne Frank House", "Stedelijk Museum Amsterdam", "Rijksmuseum}');
+VALUES ('Amsterdam', 'What is the name of the famous museum in Amsterdam?', 'Rijksmuseum', '{"Van Gogh Museum", "Anne Frank House", "Stedelijk Museum Amsterdam", "Rijksmuseum"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('Berlin', 'What is the name of the famous wall that once divided Berlin?', 'Berlin Wall', '{"Great Wall of China", "Hadrian''s Wall", "Antonine Wall", "Berlin Wall"}');
@@ -117,5 +120,4 @@ VALUES ('Seoul', 'What is the name of the famous palace in Seoul?', 'Gyeongbokgu
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('Venice', 'What is the name of the famous canal in Venice?', 'Grand Canal', '{"Rio di San Cassiano", "Rio di San Giovanni Laterano", "Rio dei Greci", "Grand Canal"}');
-
 
