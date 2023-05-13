@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
 import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
@@ -35,7 +36,8 @@ const materialModules = [
   MatSliderModule,
   MatFormFieldModule,
   MatInputModule,
-  MatGridListModule,
+    MatGridListModule,
+    MatTableModule,
     MatRadioModule,
     MatIconModule,
     MatSnackBarModule,
