@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -17,6 +18,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
 
 
 const materialModules = [
@@ -26,13 +28,15 @@ const materialModules = [
   MatNativeDateModule,
   MatSliderModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatGridListModule,
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    RankingPageComponent
   ],
   imports: [
     BrowserModule,
