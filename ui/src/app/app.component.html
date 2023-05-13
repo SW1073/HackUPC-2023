@@ -9,9 +9,7 @@
 
 <h1>Welcome to {{ title }}!</h1>
 
-<form (submit)="saveUser($event)">
-  <input type="text" name="name" placeholder="Name">
-  <input type="text" name="email" placeholder="Email">
-  <input type="text" name="phone" placeholder="Phone">
-  <button type="submit">Save</button>
-</form>
+<form (submit)="createUser($event)">
+  <input type="text" name="username" placeholder="Username">
+  <button type="submit">Send</button>
+</form> 

@@ -20,7 +20,19 @@ export class AppComponent {
         this.http.post('http://localhost:3000/api/save-user', data).subscribe(response => {
             console.log(response);
         });
+    }
 
+    createUser(event: any) {
+        event.preventDefault();
+        console.log('front-end creating user');
+        // console.log(event);
+
+        let value = event.target[0].value;
+        let data = {username: value};
+
+        this.http.post('http://localhost:3000/api/save-user', data).subscribe(response => {
+            console.log(response);
+        });
     }
 
 }
