@@ -14,12 +14,19 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
+
 const materialModules = [
   MatButtonModule,
   MatCardModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSliderModule
+  MatSliderModule,
+  MatFormFieldModule,
+  MatInputModule
 ];
 
 @NgModule({
@@ -33,6 +40,7 @@ const materialModules = [
     HttpClientModule,
     NoopAnimationsModule,
     materialModules,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
