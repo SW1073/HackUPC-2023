@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ranking-page',
@@ -18,8 +19,13 @@ export class RankingPageComponent implements OnInit {
             console.log(response);
         });
     }
+
+    goBack() {
+        this.router.navigate(['/home']);
+    }
     constructor(
         private apiService: ApiService,
+        private router: Router,
         private http: HttpClient,
     ) {}
 }

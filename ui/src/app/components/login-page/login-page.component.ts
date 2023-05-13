@@ -19,7 +19,7 @@ export class LoginPageComponent implements OnInit {
     ngOnInit() {
         if (localStorage.getItem('username') !== null) {
             console.log('user is logged in');
-            this.router.navigate(['/individual-trivia']);
+            this.router.navigate(['/home']);
         }
     }
 
