@@ -5,6 +5,7 @@ import { RankingPageComponent } from './components/ranking-page/ranking-page.com
 import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
 
 const routes: Routes = [
+    {path: '', redirectTo: '/login', pathMatch: 'full'},
     {path: 'login', component: LoginPageComponent},
     {path: 'ranking', component: RankingPageComponent},
     {path: 'individual-trivia', component: IndividualTriviaComponent},

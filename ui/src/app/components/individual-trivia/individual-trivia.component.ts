@@ -44,34 +44,39 @@ export class IndividualTriviaComponent implements OnInit {
 
         this.http.post('http://localhost:3000/api/get-question-answer/', data).subscribe(data => {
             correctAnswer = data;
+            console.log(correctAnswer[0].answer);
+            if (answer == correctAnswer[0].answer) {
+                alert('Correct!');
+                this.score += 100;
+            } else {
+                alert("youre trash");
+                if (this.score > 100) this.score -= 100;
+            }
         });
-
-        console.log(correctAnswer);
-
-        if (answer == correctAnswer) {
-            alert('Correct!');
-            this.score += 100;
-        } else {
-            alert("youre trash");
-            if (this.score > 100) this.score -= 100;
-        }
 
         this.nextQuestion();
     }
 
     nextQuestion() {
-        ++this.questionsAnswered;
-
-        if (this.questionsAnswered == this.totalQuestions) {
-            alert("You've finished the quiz! Your score is " + this.score + "!");
-            this.http.post('http://localhost:3000/api/save-individual-game/', this.score);
-            return;
-        }
+        this.checkMaxQuestionsAnswered();
 
         this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
             this.randomQuestion = data;
             // console.log(this.randomQuestion);
         });
+    }
+
+    checkMaxQuestionsAnswered() {
+        if (this.questionsAnswered == this.totalQuestions) {
+            alert("You've finished the quiz! Your score is " + this.score + "!");
+            let data = {username: localStorage.getItem('username'), score: this.score};
+            this.http.post('http://localhost:3000/api/save-individual-game/', data).subscribe(data => {
+                console.log(data);
+            });
+            return;
+        }
+
+        ++this.questionsAnswered;
     }
 
 }

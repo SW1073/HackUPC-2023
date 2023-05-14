@@ -79,7 +79,7 @@ router.get("/users", (req, res) => {
 
 router.post("/save-individual-game", (req, res) => {
     const username = req.body.username;
-    const points = req.body.points;
+    const points = req.body.score;
 
     if (username == undefined) {
         res.status(400).json({ error: 'Bad request' });
@@ -94,7 +94,7 @@ router.post("/save-individual-game", (req, res) => {
             res.status(500).json({ error: 'Server error' });
         }
         else {
-            res.json(query_res.rows);
+            res.status(200);
         }
     });
 })
