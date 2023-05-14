@@ -11,4 +11,7 @@ mat-toolbar-row {
   scale: 0.7;
 }
 
+.info {
+    color: grey;
+}
 

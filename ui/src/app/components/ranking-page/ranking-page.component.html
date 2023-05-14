@@ -1,15 +1,16 @@
 <top-bar></top-bar>
 <div class="container">
+    <button mat-raised-button color="primary" (click)="goBack()">Back</button>
     <table mat-table [dataSource]="ranking" class="mat-elevation-z8">
-        <ng-container matColumnDef="position">
+        <ng-container class="columna" matColumnDef="position">
             <th mat-header-cell *matHeaderCellDef> No. </th>
             <td mat-cell *matCellDef="let i = index"> {{ i+1 }} </td>
         </ng-container>
-        <ng-container matColumnDef="name">
+        <ng-container class="columna" matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
             <td mat-cell *matCellDef="let element"> {{element.username}} </td>
         </ng-container>
-        <ng-container matColumnDef="score">
+        <ng-container class="columna" matColumnDef="score">
             <th mat-header-cell *matHeaderCellDef> Score </th>
             <td mat-cell *matCellDef="let element"> {{element.sum}} </td>
         </ng-container>
@@ -17,6 +18,5 @@
         <mat-header-row *matHeaderRowDef="['position', 'name', 'score']"></mat-header-row>
         <mat-row *matRowDef="let position; columns: ['position', 'name', 'score']"></mat-row>
     </table>
-    <button mat-raised-button color="primary" (click)="goBack()">Back</button>
 </div>
 
