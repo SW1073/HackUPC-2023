@@ -62,7 +62,11 @@ export class IndividualTriviaComponent implements OnInit {
     nextQuestion() {
         this.checkMaxQuestionsAnswered();
 
-        this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
+        let data = {city: localStorage.getItem('city')};
+
+        console.log("city: " + data.city);
+
+        this.http.post('http://localhost:3000/api/random-question-city', data).subscribe(data => {
             this.randomQuestion = data;
             console.log(this.randomQuestion);
         });

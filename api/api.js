@@ -120,10 +120,10 @@ router.get("/random-question", (req, res) => {
     });
 });
 
-router.get("/random-question-city", (req, res) => {
+router.post("/random-question-city", (req, res) => {
     const city = req.body.city;
 
-    const query = 'SELECT id, question, choices FROM Questions WHERE city = "' + city + '" ORDER BY RANDOM() LIMIT 1';
+    const query = "SELECT id, question, choices FROM Questions WHERE city = '" + city + "' ORDER BY RANDOM() LIMIT 1";
 
     pool.query(query, (err, query_res) => {
         if(err) {
