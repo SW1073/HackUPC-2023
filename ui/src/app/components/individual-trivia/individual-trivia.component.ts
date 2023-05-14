@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
-import { TopBarComponent } from '../top-bar/top-bar.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-individual-trivia',
@@ -24,6 +24,7 @@ export class IndividualTriviaComponent implements OnInit {
     constructor(
         private http: HttpClient,
         private fb: FormBuilder,
+        private router: Router
     ) { 
         this.formAnswers = this.fb.group({
             selectedAnswer: ['', Validators.required],
@@ -61,10 +62,10 @@ export class IndividualTriviaComponent implements OnInit {
     nextQuestion() {
         this.checkMaxQuestionsAnswered();
 
-        // this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
-        //     this.randomQuestion = data;
-        //     // console.log(this.randomQuestion);
-        // });
+        this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
+            this.randomQuestion = data;
+            // console.log(this.randomQuestion);
+        });
     }
 
     checkMaxQuestionsAnswered() {
@@ -74,6 +75,7 @@ export class IndividualTriviaComponent implements OnInit {
             this.http.post('http://localhost:3000/api/save-individual-game/', data).subscribe(data => {
                 console.log(data);
             });
+            this.router.navigate(['/home']);
             return;
         }
 
