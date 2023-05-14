@@ -13,6 +13,8 @@ export class LoginPageComponent implements OnInit {
 
     title = 'Welcome to Vueling!';
 
+    city: any;
+
     constructor(private http: HttpClient,
                 private apiService: ApiService,
                 private router: Router) {}
@@ -20,6 +22,11 @@ export class LoginPageComponent implements OnInit {
     ngOnInit() {
         if (localStorage.getItem('username') !== null) {
             console.log('user is logged in');
+            this.router.navigate(['/home']);
+        }
+
+        if (localStorage.getItem('city') !== null) {
+            console.log('user has selected a city');
             this.router.navigate(['/home']);
         }
     }
@@ -32,6 +39,12 @@ export class LoginPageComponent implements OnInit {
         console.log('front-end creating user: ' + value);
 
         localStorage.setItem('username', value);
+
+        this.http.get('http://localhost:3000/api/random-city').subscribe(data => {
+            console.log(data);
+            this.city = data;
+            localStorage.setItem('city', this.city[0].name);
+        });
 
         this.http.post('http://localhost:3000/api/save-user', data).subscribe(response => {
             this.router.navigate(['/home']);
