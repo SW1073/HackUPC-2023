@@ -62,15 +62,11 @@ export class IndividualTriviaComponent implements OnInit {
     nextQuestion() {
         this.checkMaxQuestionsAnswered();
 
-        // let i = 0;
-        // while (i < 5 && this.randomQuestion[0].city != localStorage.getItem('city')) {
-            this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
-                this.randomQuestion = data;
-                // ++i;
-                console.log(this.randomQuestion);
-            });
-        }
-    // }
+        this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
+            this.randomQuestion = data;
+            console.log(this.randomQuestion);
+        });
+    }
 
     checkMaxQuestionsAnswered() {
         if (this.questionsAnswered == this.totalQuestions) {

@@ -128,6 +128,22 @@ router.get("/random-question", (req, res) => {
     });
 });
 
+router.get("/random-question-city", (req, res) => {
+    const city = req.body.city;
+
+    const query = 'SELECT id, question, choices FROM Questions WHERE city = "' + city + '" ORDER BY RANDOM() LIMIT 1';
+
+    pool.query(query, (err, query_res) => {
+        if(err) {
+            console.log(err)
+            res.status(500).json({ error: 'Server error' });
+        }
+        else {
+            res.json(query_res.rows);
+        }
+    });
+});
+
 router.post("/get-question-answer", (req, res) => {
     const id = req.body.id;
 
