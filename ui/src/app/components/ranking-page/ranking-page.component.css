@@ -7,3 +7,18 @@ table {
 .mat-header-cell, mat-cell {
   text-align: center;
 }
+
+table {
+  box-shadow: none;
+}
+
+.container {
+    padding: 1%;
+}
+
+td,th {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+

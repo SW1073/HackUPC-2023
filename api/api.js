@@ -45,24 +45,16 @@ router.get("/user/:username", (req, res) => {
     let query = "SELECT SUM(points) as points FROM IndividualGame WHERE player = '" + username + "'";
 
     pool.query(query, (err, query_res) => {
+        console.log(query_res.rows)
         if(err) {
             console.log(err)
             res.status(500).json({ error: 'Server error' });
         }
+        else if (query_res.rows[0].points == null) {
+            res.json([{points: 0}]) 
+        }
         else res.json(query_res.rows)
     });
-})
-
-router.get("/questions", (req, res) => {
-    // TODO fix this
-
-    // pool.query('SELECT  FROM users', (err, res) => {
-    //     if(err) {
-    //          console.log(err)
-    //          res.status(500).json({ error: 'Server error' });
-    //     }
-    //     else res.json = res.rows
-    // }
 })
 
 router.get("/users", (req, res) => {
