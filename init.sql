@@ -353,13 +353,13 @@ INSERT INTO Questions (city, question, answer, choices)
 VALUES ('Vienna', 'What is the name of the famous palace in Vienna?', 'Schönbrunn Palace', '{"Versailles Palace", "Pena Palace", "Neuschwanstein Castle", "Schönbrunn Palace"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('Vienna', 'What is the name of the famous cathedral in Vienna?', 'St. Stephen\'s Cathedral', '{"Notre-Dame Cathedral", "St. Peter\'s Basilica", "Westminster Abbey", "St. Stephen\'s Cathedral"}');
+VALUES ('Vienna', 'What is the name of the famous cathedral in Vienna?', 'St. Stephens Cathedral', '{"Notre-Dame Cathedral", "St. Peter Basilica", "Westminster Abbey", "St. Stephens Cathedral"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('Vienna', 'What is the name of the famous amusement park in Vienna?', 'Prater', '{"Disneyland", "Universal Studios", "Europa-Park", "Prater"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('Vienna', 'What is the name of the famous coffee house in Vienna?', 'Café Central', '{"Starbucks", "Costa Coffee", "Dunkin\' Donuts", "Café Central"}');
+VALUES ('Vienna', 'What is the name of the famous coffee house in Vienna?', 'Café Central', '{"Starbucks", "Costa Coffee", "Dunkin Donuts", "Café Central"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('Venice', 'What is the name of the famous canal in Venice?', 'Grand Canal', '{"Suez Canal", "Panama Canal", "Erie Canal", "Grand Canal"}');
@@ -368,5 +368,5 @@ INSERT INTO Questions (city, question, answer, choices)
 VALUES ('Venice', 'What is the name of the famous bridge in Venice?', 'Rialto Bridge', '{"Brooklyn Bridge", "Golden Gate Bridge", "Tower Bridge", "Rialto Bridge"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('Venice', 'What is the name of the famous square in Venice?', 'St. Mark\'s Square', '{"Times Square", "Red Square", "Trafalgar Square", "St. Mark\'s Square"}');
+VALUES ('Venice', 'What is the name of the famous square in Venice?', 'St. Marks Square', '{"Times Square", "Red Square", "Trafalgar Square", "St. Marks Square"}');
 
