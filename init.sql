@@ -158,16 +158,16 @@ INSERT INTO Questions (city, question, answer, choices)
 VALUES ('Paris', 'What is the name of the famous avenue in Paris?', 'Champs-Élysées', '{"Fifth Avenue", "Oxford Street", "Rodeo Drive", "Champs-Élysées"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('New York', 'What is the name of the famous park in New York?', 'Central Park', '{"Hyde Park", "Golden Gate Park", "Stanley Park", "Central Park"}');
+VALUES ('New York City', 'What is the name of the famous park in New York City?', 'Central Park', '{"Hyde Park", "Golden Gate Park", "Stanley Park", "Central Park"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('New York', 'What is the name of the famous statue in New York?', 'Statue of Liberty', '{"Christ the Redeemer", "Great Sphinx of Giza", "Tian Tan Buddha", "Statue of Liberty"}');
+VALUES ('New York City', 'What is the name of the famous statue in New York City?', 'Statue of Liberty', '{"Christ the Redeemer", "Great Sphinx of Giza", "Tian Tan Buddha", "Statue of Liberty"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('New York', 'What is the name of the famous museum in New York?', 'Metropolitan Museum of Art', '{"National Gallery of Art", "Museum of Modern Art", "British Museum", "Metropolitan Museum of Art"}');
+VALUES ('New York City', 'What is the name of the famous museum in New York City?', 'Metropolitan Museum of Art', '{"National Gallery of Art", "Museum of Modern Art", "British Museum", "Metropolitan Museum of Art"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
-VALUES ('New York', 'What is the name of the famous building in New York?', 'Empire State Building', '{"Burj Khalifa", "Taipei 101", "Shanghai Tower", "Empire State Building"}');
+VALUES ('New York City', 'What is the name of the famous building in New York City?', 'Empire State Building', '{"Burj Khalifa", "Taipei 101", "Shanghai Tower", "Empire State Building"}');
 
 INSERT INTO Questions (city, question, answer, choices) 
 VALUES ('London', 'What is the name of the famous clock tower in London?', 'Big Ben', '{"Tower of London", "Westminster Abbey", "Buckingham Palace", "Big Ben"}');
