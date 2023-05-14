@@ -40,7 +40,7 @@ router.get("/user/:username", (req, res) => {
         return;
     }
 
-    let query = "SELECT * FROM IndividualGame WHERE player = '" + username + "'";
+    let query = "SELECT SUM(points) FROM IndividualGame WHERE player = '" + username + "'";
 
     pool.query(query, (err, query_res) => {
         if(err) {
@@ -113,7 +113,7 @@ router.get("/ranking", (req, res) => {
 })
 
 router.get("/random-question", (req, res) => {
-    const query = 'SELECT * FROM Questions ORDER BY RANDOM() LIMIT 1';
+    const query = 'SELECT id, question, city, choices FROM Questions ORDER BY RANDOM() LIMIT 1';
 
     pool.query(query, (err, query_res) => {
         if(err) {
@@ -121,9 +121,26 @@ router.get("/random-question", (req, res) => {
             res.status(500).json({ error: 'Server error' });
         }
         else {
-            res.send(query_res.rows);
+            res.json(query_res.rows);
         }
     });
 });
+
+router.post("/get-question-answer", (req, res) => {
+    const id = req.body.id;
+    const query = "SELECT answer FROM Questions WHERE id = " + id;
+
+    pool.query(query, (err, query_res) => {
+        if(err) {
+            console.log(err)
+            res.status(500).json({ error: 'Server error' });
+        }
+        else {
+            res.json(query_res.rows);
+        }
+    });
+});
+
+router.get("")
 
 module.exports = router
