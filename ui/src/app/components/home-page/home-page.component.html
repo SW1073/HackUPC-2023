@@ -1,19 +1,31 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <!-- Logo -->
-    <div class="logo">Hola</div>
+    <div class="left-objects">
+      <img [src]="'assets/vueling-logo.png'" class="logo">
+    </div>
 
-    <span class="spacer"></span>
-    <!-- Boton de ranking-->
-    <button mat-fab extended style="background-color: ;" (click)="routeToRanking()">
-      <mat-icon>list</mat-icon> Ranking
-    </button>
+    <span style="flex: 1 1 auto;"></span>
+
+    <span>Welcome, <b>{{ userName }}</b>, you have <b>{{ userPoints }}</b> points</span>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
 
+<div class="big-div">
+  <mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <button mat-fab extended class="button" (click)="routeToIndividualTrivia()">
+      <mat-icon>star</mat-icon>
+      Individual Trivia
+    </button>
+  </mat-grid-tile>
 
-<button mat-fab extended>
-  <mat-icon>person</mat-icon>
-  Profile
-</button>
+  <mat-grid-tile>
+    <button mat-fab extended class="button" (click)="routeToRanking()">
+      <mat-icon>list</mat-icon>
+      Ranking
+    </button>
+  </mat-grid-tile>
+  </mat-grid-list>
+</div>

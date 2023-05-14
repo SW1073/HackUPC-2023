@@ -38,12 +38,12 @@ const materialModules = [
   MatSliderModule,
   MatFormFieldModule,
   MatInputModule,
-    MatGridListModule,
-    MatTableModule,
-    MatRadioModule,
-    MatIconModule,
-    MatSnackBarModule,
-    MatToolbarModule,
+  MatGridListModule,
+  MatTableModule,
+  MatRadioModule,
+  MatIconModule,
+  MatSnackBarModule,
+  MatToolbarModule,
 ];
 
 @NgModule({
