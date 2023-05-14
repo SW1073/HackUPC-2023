@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { TopBarComponent } from '../top-bar/top-bar.component';
 
 @Component({
   selector: 'app-individual-trivia',
@@ -60,10 +61,10 @@ export class IndividualTriviaComponent implements OnInit {
     nextQuestion() {
         this.checkMaxQuestionsAnswered();
 
-        this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
-            this.randomQuestion = data;
-            // console.log(this.randomQuestion);
-        });
+        // this.http.get('http://localhost:3000/api/random-question').subscribe(data => {
+        //     this.randomQuestion = data;
+        //     // console.log(this.randomQuestion);
+        // });
     }
 
     checkMaxQuestionsAnswered() {
