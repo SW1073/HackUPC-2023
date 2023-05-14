@@ -11,9 +11,3 @@ mat-card {
   width: 400px;
   padding: 30px;
 }
-
-.background-div {
-  background-image: url('src/assets/yellow.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}

@@ -14,11 +14,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
 import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 
@@ -26,7 +26,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const materialModules = [
   MatButtonModule,
@@ -36,17 +38,20 @@ const materialModules = [
   MatSliderModule,
   MatFormFieldModule,
   MatInputModule,
-    MatGridListModule,
-    MatTableModule,
-    MatRadioModule,
-    MatIconModule,
-    MatSnackBarModule,
+  MatGridListModule,
+  MatTableModule,
+  MatRadioModule,
+  MatIconModule,
+  MatSnackBarModule,
+  MatToolbarModule,
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
+    IndividualTriviaComponent,
+    HomePageComponent,
     RankingPageComponent,
     IndividualTriviaComponent,
   ],
