@@ -17,8 +17,9 @@ export class TopBarComponent implements OnInit {
 
     ngOnInit() {
             this.userName = localStorage.getItem('username') ?? 'User123';
-            this.http.get('http://localhost:3000/users/' + this.userName).subscribe((data: any) => {
-                this.userPoints = data.points;
+            this.http.get('http://localhost:3000/api/user/' + this.userName).subscribe((data: any) => {
+                console.log(data);
+                this.userPoints = data[0].points;
             });
     }
 

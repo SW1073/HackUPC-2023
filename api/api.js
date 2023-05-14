@@ -42,7 +42,7 @@ router.get("/user/:username", (req, res) => {
         return;
     }
 
-    let query = "SELECT SUM(points) FROM IndividualGame WHERE player = '" + username + "'";
+    let query = "SELECT SUM(points) as points FROM IndividualGame WHERE player = '" + username + "'";
 
     pool.query(query, (err, query_res) => {
         if(err) {
@@ -148,7 +148,5 @@ router.post("/get-question-answer", (req, res) => {
         }
     });
 });
-
-router.get("")
 
 module.exports = router
