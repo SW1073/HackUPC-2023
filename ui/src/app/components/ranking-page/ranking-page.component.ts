@@ -3,6 +3,7 @@ import { ApiService } from '../../services/api.service';
 import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { TopBarComponent } from '../top-bar/top-bar.component';
 
 @Component({
   selector: 'app-ranking-page',

@@ -10,6 +10,8 @@ const pool = new Pool({
     port: 5432,
 });
 
+router.use(express.json());
+
 // POST user to DB
 router.post("/save-user", (req, res) => {
     const username = req.body.username;

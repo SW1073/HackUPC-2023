@@ -29,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 const materialModules = [
   MatButtonModule,
@@ -54,6 +55,7 @@ const materialModules = [
     HomePageComponent,
     RankingPageComponent,
     IndividualTriviaComponent,
+    TopBarComponent,
   ],
   imports: [
     BrowserModule,
