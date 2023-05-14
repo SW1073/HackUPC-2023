@@ -1,12 +1,22 @@
-<h1>Ranking </h1>
-<div class="ranking-grid">
-  <mat-grid-list cols="4" rowHeight="1:2">
-        <mat-grid-tile>
-            <mat-card *ngFor="let position of ranking; let i = index"> 
-                <mat-card-title>Nombre: {{ position['username']}}</mat-card-title>
-                <mat-card-title>Puntuación: {{ position['sum'] }}</mat-card-title><br>
-            </mat-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+<top-bar></top-bar>
+<div class="container">
+    <table mat-table [dataSource]="ranking" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let i = index"> {{ i+1 }} </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container>
+        <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef> Score </th>
+            <td mat-cell *matCellDef="let element"> {{element.sum}} </td>
+        </ng-container>
+        <!-- Celdas de la tabla -->
+        <mat-header-row *matHeaderRowDef="['position', 'name', 'score']"></mat-header-row>
+        <mat-row *matRowDef="let position; columns: ['position', 'name', 'score']"></mat-row>
+    </table>
+    <button mat-raised-button color="primary" (click)="goBack()">Back</button>
 </div>
 

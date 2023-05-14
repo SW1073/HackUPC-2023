@@ -1,0 +1,19 @@
+.big-div {
+  margn-top: 400px;
+}
+
+.button {
+  font-size: 20px;
+  padding: 150px 100px;
+  width: 40%;
+  background-color: grey;
+}
+
+.right-objects {
+  float: right;
+}
+
+.left-objects {
+  margin-left: -50px;
+  float: right;
+}

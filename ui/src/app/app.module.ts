@@ -7,25 +7,29 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { RankingPageComponent } from './components/ranking-page/ranking-page.component';
 import { IndividualTriviaComponent } from './components/individual-trivia/individual-trivia.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 const materialModules = [
   MatButtonModule,
@@ -36,17 +40,22 @@ const materialModules = [
   MatFormFieldModule,
   MatInputModule,
   MatGridListModule,
-    MatRadioModule,
-    MatIconModule,
-    MatSnackBarModule,
+  MatTableModule,
+  MatRadioModule,
+  MatIconModule,
+  MatSnackBarModule,
+  MatToolbarModule,
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
+    IndividualTriviaComponent,
+    HomePageComponent,
     RankingPageComponent,
     IndividualTriviaComponent,
+    TopBarComponent,
   ],
   imports: [
     BrowserModule,
