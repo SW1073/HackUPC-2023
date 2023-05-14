@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class IndividualTriviaComponent implements OnInit {
     question = 'What is the capital city of France?';
-    image = 'https://cdn.pixabay.com/photo/2018/10/05/09/21/eiffel-tower-3722505_960_720.jpg';
     options = ['Paris', 'Madrid', 'London', 'Berlin'];
 
     public formAnswers: FormGroup;
@@ -20,6 +19,7 @@ export class IndividualTriviaComponent implements OnInit {
     totalQuestions = 5;
     questionsAnswered = 0;
     score = 0;
+    image = "../../../assets/random/0.jpg";
 
     constructor(
         private http: HttpClient,
@@ -70,6 +70,11 @@ export class IndividualTriviaComponent implements OnInit {
             this.randomQuestion = data;
             console.log(this.randomQuestion);
         });
+
+        let rand = Math.floor(Math.random() * 8);
+        console.log("../../assets/random/");
+        this.image = "../../../assets/random/" + rand.toString() + ".jpg";
+        console.log(this.image);
     }
 
     checkMaxQuestionsAnswered() {

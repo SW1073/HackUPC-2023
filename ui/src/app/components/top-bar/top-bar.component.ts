@@ -12,6 +12,7 @@ export class TopBarComponent implements OnInit {
     userName?: string;
     userPoints?: number = 1000;
 
+    city? = localStorage.getItem('city') ?? 'Barcelona';
 
     constructor(private http: HttpClient) {}
 

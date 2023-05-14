@@ -8,7 +8,7 @@
                     <h2 *ngIf="randomQuestion">{{randomQuestion[0].question}}</h2>
                 </div>
                 <div class="col-md-6">
-                    <img style="max-width: 600px;max-height: 800px;margin:auto" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                    <img style="max-width: 600px;max-height: 800px;margin:auto" [src]="image" alt="Photo of a Shiba Inu">
                 </div>
             </div>
             <div class="row">
