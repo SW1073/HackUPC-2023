@@ -36,5 +36,6 @@ export class LoginPageComponent implements OnInit {
             this.router.navigate(['/individual-trivia']);
             console.log(response);
         });
+
     }
 }

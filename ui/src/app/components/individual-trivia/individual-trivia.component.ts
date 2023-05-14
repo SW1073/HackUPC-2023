@@ -17,20 +17,18 @@ export class IndividualTriviaComponent implements OnInit {
     public randomQuestion: any;
 
     totalQuestions = 5;
+    questionsAnswered = 0;
+    score = 0;
 
     constructor(
         private http: HttpClient,
         private fb: FormBuilder,
-        private questionsAnswered: number,
-        private score: number,
     ) { 
         this.formAnswers = this.fb.group({
             selectedAnswer: ['', Validators.required],
         });
 
         this.randomQuestion = ["nice"];
-        this.questionsAnswered = 0;
-        this.score = 0;
     }
 
     ngOnInit() {
@@ -40,9 +38,15 @@ export class IndividualTriviaComponent implements OnInit {
     submitAnswer() {
         // console.log(this.randomQuestion);
         let answer = this.formAnswers.value.selectedAnswer;
-        let correctAnswer = this.randomQuestion[0].answer;
+        let correctAnswer = this.randomQuestion[0];
 
-        console.log(answer);
+        let data = {id: this.randomQuestion[0].id};
+
+        this.http.post('http://localhost:3000/api/get-question-answer/', data).subscribe(data => {
+            correctAnswer = data;
+        });
+
+        console.log(correctAnswer);
 
         if (answer == correctAnswer) {
             alert('Correct!');
@@ -52,7 +56,7 @@ export class IndividualTriviaComponent implements OnInit {
             if (this.score > 100) this.score -= 100;
         }
 
-            this.nextQuestion();
+        this.nextQuestion();
     }
 
     nextQuestion() {
@@ -70,9 +74,4 @@ export class IndividualTriviaComponent implements OnInit {
         });
     }
 
-    getAnswer(questionId: number) {
-        this.http.post('http://localhost:3000/api/get-question-answer/', questionId).subscribe(data => {
-            console.log(data);
-        });
-    }
 }

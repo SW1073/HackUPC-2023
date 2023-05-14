@@ -10,6 +10,8 @@ const pool = new Pool({
     port: 5432,
 });
 
+router.use(express.json());
+
 // POST user to DB
 router.post("/save-user", (req, res) => {
     const username = req.body.username;
@@ -128,6 +130,12 @@ router.get("/random-question", (req, res) => {
 
 router.post("/get-question-answer", (req, res) => {
     const id = req.body.id;
+
+    if (id == undefined) {
+        res.status(400).json({ error: 'Bad request' });
+        return;
+    }
+
     const query = "SELECT answer FROM Questions WHERE id = " + id;
 
     pool.query(query, (err, query_res) => {
